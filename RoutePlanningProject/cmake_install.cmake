@@ -1,4 +1,4 @@
-# Install script for directory: /home/workspace/CppND-Route-Planning-Project
+# Install script for directory: /home/sukhwanyun/Desktop/CppNanoDegree/RoutePlanningProject
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,10 +39,10 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/workspace/CppND-Route-Planning-Project/src/cmake_install.cmake")
-  include("/home/workspace/CppND-Route-Planning-Project/test/cmake_install.cmake")
-  include("/home/workspace/CppND-Route-Planning-Project/thirdparty/pugixml/cmake_install.cmake")
-  include("/home/workspace/CppND-Route-Planning-Project/thirdparty/googletest/cmake_install.cmake")
+  include("/home/sukhwanyun/Desktop/CppNanoDegree/RoutePlanningProject/src/cmake_install.cmake")
+  include("/home/sukhwanyun/Desktop/CppNanoDegree/RoutePlanningProject/test/cmake_install.cmake")
+  include("/home/sukhwanyun/Desktop/CppNanoDegree/RoutePlanningProject/thirdparty/pugixml/cmake_install.cmake")
+  include("/home/sukhwanyun/Desktop/CppNanoDegree/RoutePlanningProject/thirdparty/googletest/cmake_install.cmake")
 
 endif()
 
@@ -54,5 +54,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/workspace/CppND-Route-Planning-Project/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/sukhwanyun/Desktop/CppNanoDegree/RoutePlanningProject/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

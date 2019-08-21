@@ -1,4 +1,4 @@
-# Install script for directory: /home/workspace/CppND-Route-Planning-Project/src
+# Install script for directory: /home/sukhwanyun/Desktop/CppNanoDegree/RoutePlanningProject/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

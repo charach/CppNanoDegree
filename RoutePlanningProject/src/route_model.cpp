@@ -1,6 +1,5 @@
 #include "route_model.h"
 #include <iostream>
-
 RouteModel::RouteModel(const std::vector<std::byte> &xml) : Model(xml)
 {
     int index = 0;
@@ -44,8 +43,8 @@ RouteModel::Node *RouteModel::Node::FindNeighbor(std::vector<int> node_indices)
 }
 
 void RouteModel::Node::FindNeighbors() {
-    for( const Model::Road &road : parent_model->node_to_road[this->index]) {
-        RouteModel::Node *neighborNode = this->FindNeighbor(this->parent_model->Ways()[road.way].nodes);
+    for( auto & road : parent_model->node_to_road[this->index]) {
+        RouteModel::Node *neighborNode = this->FindNeighbor(this->parent_model->Ways()[road->way].nodes);
         if( neighborNode != nullptr){
             this->neighbors.push_back(neighborNode);
         }
@@ -62,7 +61,7 @@ RouteModel::Node &RouteModel::FindClosestNode(float x, float y) {
     for (const Model::Road &road : this->Roads()){
         if(road.type != Model::Road::Type::Footway) {
             for(int node_idx : Ways()[road.way].nodes) {
-                float dist = tempNode.distance(SNodes()[node_idx])
+                float dist = tempNode.distance(SNodes()[node_idx]);
                 if(min_dist > dist) {
                     min_dist = dist;
                     closest_idx = node_idx;

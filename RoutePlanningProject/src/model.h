@@ -5,7 +5,6 @@
 #include <string>
 #include <cstddef>
 
-typedef char byte;
 class Model
 {
 public:
@@ -45,7 +44,7 @@ public:
         Type type;
     };
     
-    Model( const std::vector<byte> &xml );
+    Model( const std::vector<std::byte> &xml );
     
     auto MetricScale() const noexcept { return m_MetricScale; }    
     
@@ -61,7 +60,7 @@ public:
 private:
     void AdjustCoordinates();
     void BuildRings( Multipolygon &mp );
-    void LoadData(const std::vector<byte> &xml);
+    void LoadData(const std::vector<std::byte> &xml);
     
     std::vector<Node> m_Nodes;
     std::vector<Way> m_Ways;

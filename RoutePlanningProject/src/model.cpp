@@ -6,7 +6,6 @@
 #include <algorithm>
 #include <assert.h>
 
-typedef char byte;
 static Model::Road::Type String2RoadType(std::string_view type)
 {
     if( type == "motorway" )        return Model::Road::Motorway;
@@ -38,7 +37,7 @@ static Model::Landuse::Type String2LanduseType(std::string_view type)
     return Model::Landuse::Invalid;
 }
 
-Model::Model( const std::vector<byte> &xml )
+Model::Model( const std::vector<std::byte> &xml )
 {
     LoadData(xml);
 
@@ -49,7 +48,7 @@ Model::Model( const std::vector<byte> &xml )
     });
 }
 
-void Model::LoadData(const std::vector<byte> &xml)
+void Model::LoadData(const std::vector<std::byte> &xml)
 {
     using namespace pugi;
     

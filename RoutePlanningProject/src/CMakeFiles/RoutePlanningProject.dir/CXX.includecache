@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sukhwanyun/Desktop/CppNanoDegree/RoutePlanningProject/src/model.h
+vector
+-
+unordered_map
+-
+string
+-
+cstddef
+-
+
+/home/sukhwanyun/Desktop/CppNanoDegree/RoutePlanningProject/src/route_model.cpp
+route_model.h
+/home/sukhwanyun/Desktop/CppNanoDegree/RoutePlanningProject/src/route_model.h
+iostream
+-
+
+/home/sukhwanyun/Desktop/CppNanoDegree/RoutePlanningProject/src/route_model.h
+limits
+-
+cmath
+-
+unordered_map
+-
+model.h
+/home/sukhwanyun/Desktop/CppNanoDegree/RoutePlanningProject/src/model.h
+iostream
+-
+
