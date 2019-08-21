@@ -6,22 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/sukhwanyun/Desktop/CppNanoDegree/RoutePlanningProject/src/model.cpp
-model.h
-/home/sukhwanyun/Desktop/CppNanoDegree/RoutePlanningProject/src/model.h
-pugixml.hpp
-/home/sukhwanyun/Desktop/CppNanoDegree/RoutePlanningProject/src/pugixml.hpp
-iostream
--
-string_view
--
-cmath
--
-algorithm
--
-assert.h
--
-
 /home/sukhwanyun/Desktop/CppNanoDegree/RoutePlanningProject/src/model.h
 vector
 -
@@ -65,20 +49,4 @@ string
 -
 route_model.h
 /home/sukhwanyun/Desktop/CppNanoDegree/RoutePlanningProject/src/route_model.h
-
-thirdparty/pugixml/src/pugiconfig.hpp
-
-thirdparty/pugixml/src/pugixml.hpp
-pugiconfig.hpp
-thirdparty/pugixml/src/pugiconfig.hpp
-stddef.h
--
-exception
--
-iterator
--
-iosfwd
--
-string
--
 

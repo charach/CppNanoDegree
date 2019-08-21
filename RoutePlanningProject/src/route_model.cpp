@@ -71,3 +71,7 @@ RouteModel::Node &RouteModel::FindClosestNode(float x, float y) {
     }
     return SNodes()[closest_idx];
 }
+
+std::unordered_map<int, std::vector<const Model::Road*>> &RouteModel::GetNodeToRoadMap() {
+    return this->node_to_road;
+}

@@ -171,33 +171,6 @@ test/fast:
 	cd /home/sukhwanyun/Desktop/CppNanoDegree/RoutePlanningProject && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/build
 .PHONY : test/fast
 
-utest_rp_a_star_search.o: utest_rp_a_star_search.cpp.o
-
-.PHONY : utest_rp_a_star_search.o
-
-# target to build an object file
-utest_rp_a_star_search.cpp.o:
-	cd /home/sukhwanyun/Desktop/CppNanoDegree/RoutePlanningProject && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/utest_rp_a_star_search.cpp.o
-.PHONY : utest_rp_a_star_search.cpp.o
-
-utest_rp_a_star_search.i: utest_rp_a_star_search.cpp.i
-
-.PHONY : utest_rp_a_star_search.i
-
-# target to preprocess a source file
-utest_rp_a_star_search.cpp.i:
-	cd /home/sukhwanyun/Desktop/CppNanoDegree/RoutePlanningProject && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/utest_rp_a_star_search.cpp.i
-.PHONY : utest_rp_a_star_search.cpp.i
-
-utest_rp_a_star_search.s: utest_rp_a_star_search.cpp.s
-
-.PHONY : utest_rp_a_star_search.s
-
-# target to generate assembly for a file
-utest_rp_a_star_search.cpp.s:
-	cd /home/sukhwanyun/Desktop/CppNanoDegree/RoutePlanningProject && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/utest_rp_a_star_search.cpp.s
-.PHONY : utest_rp_a_star_search.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -211,9 +184,6 @@ help:
 	@echo "... install/local"
 	@echo "... rebuild_cache"
 	@echo "... install"
-	@echo "... utest_rp_a_star_search.o"
-	@echo "... utest_rp_a_star_search.i"
-	@echo "... utest_rp_a_star_search.s"
 .PHONY : help
 
 
