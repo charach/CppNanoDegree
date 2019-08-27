@@ -20,7 +20,11 @@ class RouteModel : public Model {
         std::vector<Node*> neighbors;
         Node(){}
         Node(int idx, RouteModel * search_model, Model::Node node) : Model::Node(node), parent_model(search_model), index(idx) {}
-        float distance(const RouteModel::Node node){std::sqrt(std::pow(this -> x - node.x, 2) + std::pow(this -> y - node.y, 2));}
+        float distance (Node node) const{
+          std::cout << x << y  << "\n";
+          std::cout << node.x << node.y << "\n";
+          return std::sqrt(std::pow(x - node.x, 2) + std::pow(y - node.y, 2));
+        }
         void FindNeighbors();
       private:
         // Add private Node variables and methods here.

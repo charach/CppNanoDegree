@@ -6,7 +6,6 @@
 #include <string>
 #include "route_model.h"
 
-using std::vector;
 
 class RoutePlanner {
   public:
@@ -24,7 +23,7 @@ class RoutePlanner {
     float distance;
     std::vector<RouteModel::Node*> open_list;
 
-    vector<RouteModel::Node> ConstructFinalPath(RouteModel::Node *current_node);
+    std::vector<RouteModel::Node> ConstructFinalPath(RouteModel::Node *current_node);
     float CalculateHValue(RouteModel::Node *node);
     RouteModel::Node *NextNode();
     void AddNeighbors(RouteModel::Node *current_node);
