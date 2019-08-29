@@ -1,3 +1,0 @@
-/home/sukhwanyun/Desktop/CppNanoDegree/SystemMonitor/build/CMakeFiles/rebuild_cache.dir
-/home/sukhwanyun/Desktop/CppNanoDegree/SystemMonitor/build/CMakeFiles/monitor.dir
-/home/sukhwanyun/Desktop/CppNanoDegree/SystemMonitor/build/CMakeFiles/edit_cache.dir
