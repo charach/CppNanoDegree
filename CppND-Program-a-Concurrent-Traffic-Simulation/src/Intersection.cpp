@@ -7,7 +7,6 @@
 #include "Street.h"
 #include "Intersection.h"
 #include "Vehicle.h"
-
 /* Implementation of class "WaitingVehicles" */
 
 int WaitingVehicles::getSize()
@@ -87,7 +86,10 @@ void Intersection::addVehicleToQueue(std::shared_ptr<Vehicle> vehicle)
     std::cout << "Intersection #" << _id << ": Vehicle #" << vehicle->getID() << " is granted entry." << std::endl;
     
     // FP.6b : use the methods TrafficLight::getCurrentPhase and TrafficLight::waitForGreen to block the execution until the traffic light turns green.
-
+    if(_trafficLight.getCurrentPhase() != TrafficLightPhase::green){
+        _trafficLight.waitForGreen();
+    }
+    
     lck.unlock();
 }
 
@@ -139,7 +141,6 @@ void Intersection::processVehicleQueue()
 
 bool Intersection::trafficLightIsGreen()
 {
-
    if (_trafficLight.getCurrentPhase() == TrafficLightPhase::green)
        return true;
    else
