@@ -1,12 +1,14 @@
-#include "game.h"
 #include <iostream>
 #include "SDL.h"
+#include "game.h"
+#include "fileIO.h"
 
 Game::Game(std::size_t grid_width, std::size_t grid_height)
     : snake(grid_width, grid_height),
       engine(dev()),
       random_w(0, static_cast<int>(grid_width -1)),
-      random_h(0, static_cast<int>(grid_height -1)) {
+      random_h(0, static_cast<int>(grid_height -1)),
+      fileIO(scoreFilePath) {
   PlaceFood();
 }
 
@@ -36,7 +38,7 @@ void Game::Run(Controller const &controller, Renderer &renderer,
 
     // After every second, update the window title.
     if (frame_end - title_timestamp >= 1000) {
-      renderer.UpdateWindowTitle(score, frame_count);
+      renderer.UpdateWindowTitle(score, fileIO.getMaxScore() ,frame_count);
       frame_count = 0;
       title_timestamp = frame_end;
     }
@@ -48,6 +50,7 @@ void Game::Run(Controller const &controller, Renderer &renderer,
       SDL_Delay(target_frame_duration - frame_duration);
     }
   }
+  fileIO.setMaxScore(score);
 }
 
 void Game::PlaceFood() {
@@ -85,3 +88,4 @@ void Game::Update() {
 
 int Game::GetScore() const { return score; }
 int Game::GetSize() const { return snake.size; }
+int Game::GetMaxScore() const { return fileIO.getMaxScore();}
