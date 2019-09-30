@@ -1,13 +1,15 @@
 #include <iostream>
 #include "SDL.h"
 #include "game.h"
-#include "fileIO.h"
+#include "wall.h"
 
 Game::Game(std::size_t grid_width, std::size_t grid_height)
     : snake(grid_width, grid_height),
       engine(dev()),
       random_w(0, static_cast<int>(grid_width -1)),
       random_h(0, static_cast<int>(grid_height -1)),
+      grid_width(grid_width),
+      grid_height(grid_height),
       fileIO(scoreFilePath) {
   PlaceFood();
 }
@@ -19,15 +21,20 @@ void Game::Run(Controller const &controller, Renderer &renderer,
   Uint32 frame_end;
   Uint32 frame_duration;
   int frame_count = 0;
+  int wall_count = 2;
   bool running = true;
 
   while (running) {
+    if(!snake.alive){
+      running = false;
+      break;
+    }
     frame_start = SDL_GetTicks();
 
     // Input, Update, Render - the main game loop.
     controller.HandleInput(running, snake);
     Update();
-    renderer.Render(snake, food);
+    renderer.Render(snake, wallVector ,food);
 
     frame_end = SDL_GetTicks();
 
@@ -41,6 +48,13 @@ void Game::Run(Controller const &controller, Renderer &renderer,
       renderer.UpdateWindowTitle(score, fileIO.getMaxScore() ,frame_count);
       frame_count = 0;
       title_timestamp = frame_end;
+      wall_count--;
+      if(wall_count == 0)
+      {
+        wallVector.push_back(std::move(Wall(grid_width,grid_height,snake.body,wallVector)));
+        wall_count = 2;
+      }
+
     }
 
     // If the time for this frame is too small (i.e. frame_duration is
@@ -61,9 +75,17 @@ void Game::PlaceFood() {
     // Check that the location is not occupied by a snake item before placing
     // food.
     if (!snake.SnakeCell(x, y)  ) {
-      food.x = x;
-      food.y = y;
-      return;
+      vector<Wall>::iterator wallVectorIter;
+      for(wallVectorIter = wallVector.begin(); wallVectorIter != wallVector.end(); wallVectorIter++){
+        if(wallVectorIter->getPos().x == x && wallVectorIter->getPos().y == y){
+          break;
+        }
+      }      
+      if(wallVectorIter == wallVector.end()){
+        food.x = x;
+        food.y = y;
+        return;
+      }
     }
   }
 }
@@ -71,7 +93,7 @@ void Game::PlaceFood() {
 void Game::Update() {
   if (!snake.alive) return;
 
-  snake.Update();
+  snake.Update(wallVector);
 
   int new_x = static_cast<int>(snake.head_x);
   int new_y = static_cast<int>(snake.head_y);

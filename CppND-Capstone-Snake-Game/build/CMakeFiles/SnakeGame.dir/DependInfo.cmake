@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/sukhwanyun/CppNanoDegree/CppND-Capstone-Snake-Game/src/main.cpp" "/home/sukhwanyun/CppNanoDegree/CppND-Capstone-Snake-Game/build/CMakeFiles/SnakeGame.dir/src/main.cpp.o"
   "/home/sukhwanyun/CppNanoDegree/CppND-Capstone-Snake-Game/src/renderer.cpp" "/home/sukhwanyun/CppNanoDegree/CppND-Capstone-Snake-Game/build/CMakeFiles/SnakeGame.dir/src/renderer.cpp.o"
   "/home/sukhwanyun/CppNanoDegree/CppND-Capstone-Snake-Game/src/snake.cpp" "/home/sukhwanyun/CppNanoDegree/CppND-Capstone-Snake-Game/build/CMakeFiles/SnakeGame.dir/src/snake.cpp.o"
+  "/home/sukhwanyun/CppNanoDegree/CppND-Capstone-Snake-Game/src/wall.cpp" "/home/sukhwanyun/CppNanoDegree/CppND-Capstone-Snake-Game/build/CMakeFiles/SnakeGame.dir/src/wall.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

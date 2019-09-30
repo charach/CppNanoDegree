@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "SDL.h"
+#include "wall.h"
 
 class Snake {
  public:
@@ -14,7 +15,7 @@ class Snake {
         head_x(grid_width / 2),
         head_y(grid_height / 2) {}
 
-  void Update();
+  void Update(vector<Wall> wallVector);
 
   void GrowBody();
   bool SnakeCell(int x, int y);
@@ -29,7 +30,7 @@ class Snake {
   std::vector<SDL_Point> body;
  private:
   void UpdateHead();
-  void UpdateBody(SDL_Point &current_cell, SDL_Point &prev_cell);
+  void UpdateBody(SDL_Point &current_cell, SDL_Point &prev_cell, vector<Wall> wallVector);
 
   bool growing{false};
   int grid_width;
